@@ -28,8 +28,8 @@ app.post('/search', async ( request, response ) => {
     //get next three days of weather
     // API gets weather in 3hr increments 8 = 24hr
     let day1Weather = result.list[ 8 ];
-    let day2Weather = result.list[16];
-    let day3Weather = result.list[24];
+    let day2Weather = result.list[ 16 ];
+    let day3Weather = result.list[ 24 ];
 
     //let weatherReport = tomorrowWeather.weather[0].description;
 

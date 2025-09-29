@@ -25,7 +25,17 @@
         <% result.fullReport.forEach( ( day, index ) => { %>
           <div class="day">
           <!-- display weather data -->
-            <h3>Day: <%= index + 1 %></h3>
+           <h3>
+            <!-- display header based on which of the 3 days is being looked at -->
+            <% if (index === 0 ) { %>
+              Tomorrow: 
+            <%  } else if (index === 1 ) { %>
+              The Day After: 
+            <%  } else { %>
+              The Day After Next: 
+            <% } %>
+
+           </h3>
             <p>Temp: <%= day.temp %> °F</p>
             <p>Report: <%= day.report %></p>
           </div>
