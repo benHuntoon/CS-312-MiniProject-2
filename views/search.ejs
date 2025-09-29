@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Search Result</title>
+  <link rel="stylesheet" href="/editStyles.css">
+
+</head>
+<body>
+
+  <!-- set left bar for display -->
+<div class="left"></div>
+
+<!-- set center bar for nice display -->
+<div class="center">
+  <!-- display location name -->
+  <h1><%= result.location %></h1>
+
+  <!-- check for search result not null -->
+  <div class="forecast">
+    <% if (result) { %>
+
+      <h2>Three Day Forecast:</h2>
+        <% result.fullReport.forEach( ( day, index ) => { %>
+          <div class="day">
+          <!-- display weather data -->
+            <h3>Day: <%= index + 1 %></h3>
+            <p>Temp: <%= day.temp %> °F</p>
+            <p>Report: <%= day.report %></p>
+          </div>
+
+        <% }) %>
+      <!-- Otherwise display empty results -->
+      <% } else { %>
+        <p>No Weather Data Here!</p>
+      <% } %>
+
+      <button onclick="window.location.href='/'">Back To Search</button>
+
+  </div>
+
+</div>
+
+<!-- set right bar for proper display -->
+<div class="right"></div>
+
+</body>
+
+</html>

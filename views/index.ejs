@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!-- handle screen display for a wider variety of screens -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Wonderful Weather We're Having!</title>
+
+  <!-- link to the index style sheet -->
+  <link rel="stylesheet" href="/styles.css">
+
+</head>
+<body>
+
+<!-- set left bar for display -->
+<div class="left"></div>
+
+<!-- set center bar for nicer display -->
+<div class="center">
+
+  <h1>Where do you want to check?!</h1>
+
+  <div class="container">
+
+    <form action="/search" method="POST">
+
+      <div class="form-row">
+
+        <input type="text" name="location" placeholder="Search for a City!" required autocomplete="off">
+
+      </div>
+
+      <button type="submit">Search City</button>
+
+    </form>
+
+  </div>
+
+</div>
+
+<!-- set right bar for display -->
+<div class="right"></div>
+</body>
+
+</html>
