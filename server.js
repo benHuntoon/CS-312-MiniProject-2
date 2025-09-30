@@ -56,6 +56,9 @@ app.post('/search', async ( request, response ) => {
   {
     // display error console/browser console
     console.error(error.message);
+
+    // display error back to user
+    response.render( "search.ejs", { result: null });
   }
 
 });

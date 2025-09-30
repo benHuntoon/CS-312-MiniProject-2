@@ -4,26 +4,26 @@
 <head>
 
   <title>Search Result</title>
-  <link rel="stylesheet" href="/searchStyles.css">
+  <link rel = "stylesheet" href = "/searchStyles.css">
 
 </head>
 <body>
 
   <!-- set left bar for display -->
-<div class="left"></div>
+<div class = "left"></div>
 
 <!-- set center bar for nice display -->
-<div class="center">
+<div class = "center">
   <!-- display location name -->
-  <h1><%= result.location %></h1>
-
-  <!-- check for search result not null -->
-  <div class="forecast">
-    <% if (result) { %>
+  <% if (result) { %>
+    <h1><%= result.location %></h1>
+  
+    <!-- check for search result not null -->
+    <div class = "forecast">
 
       <h2>Three Day Forecast:</h2>
         <% result.fullReport.forEach( ( day, index ) => { %>
-          <div class="day">
+          <div class = "day">
           <!-- display weather data -->
            <h3>
             <!-- display header based on which of the 3 days is being looked at -->
@@ -41,10 +41,16 @@
           </div>
 
         <% }) %>
-      <!-- Otherwise display empty results -->
-      <% } else { %>
-        <p>No Weather Data Here!</p>
-      <% } %>
+      <!-- Otherwise display empty results or error -->
+  <% } else { %>
+        <h1>Oh no!</h1>
+        <div class = "forecast">
+          <!-- display message prompting to go back -->
+           <div class = "day">
+            <p>Try Going Back and Searching Again!</p>
+           </div>
+        </div>
+  <% } %>
 
       <button onclick="window.location.href='/'">Back To Search</button>
 
